@@ -1,6 +1,7 @@
 import "./list.css";
 import NavBar from "../../components/navbar/NavBar";
 import Header from "../../components/header/Header";
+import SearchItem from "../../components/searchItem/SearchItem";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
@@ -40,8 +41,63 @@ const List = () => {
                 />
               )}
             </div>
+            <div className="lsItem">
+              <label>Options</label>
+              <div className="lsOptions">
+                <div className="lsOptionItem">
+                  <span className="lsOptionsText">
+                    Min Price <small>per night</small>
+                  </span>
+                  <input type="number" className="lsOptionInput" />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionsText">
+                    Max Price <small>per night</small>
+                  </span>
+                  <input type="number" className="lsOptionInput" />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionsText">Adult</span>
+                  <input
+                    type="number"
+                    className="lsOptionInput"
+                    min={1}
+                    placeholder={options.adult}
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionsText">Children</span>
+                  <input
+                    type="number"
+                    className="lsOptionInput"
+                    min={0}
+                    placeholder={options.children}
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionsText">Room</span>
+                  <input
+                    type="number"
+                    className="lsOptionInput"
+                    min={1}
+                    placeholder={options.room}
+                  />
+                </div>
+              </div>
+            </div>
+            <button>Search</button>
           </div>
-          <div className="listResult"></div>
+          <div className="listResult">
+            <SearchItem/>
+            <SearchItem/>
+            <SearchItem/>
+            <SearchItem/>
+            <SearchItem/>
+            <SearchItem/>
+            <SearchItem/>
+            <SearchItem/>
+            <SearchItem/>
+          </div>
         </div>
       </div>
     </div>
